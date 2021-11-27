@@ -1,0 +1,122 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+li {
+  padding: 10px;
+}
+
+.title {
+  text-align: center;
+  margin: 70px 0px 0px 0px;
+  font-size: 20px;
+}
+
+.second-title {
+  padding-top: 20px;
+  font-size: 17px;
+}
+
+.content {
+  font-size: 20px;
+}
+
+a /* link */ {
+  color: black;
+  text-decoration: none;
+  border-bottom: dashed 1px rgba(0, 0, 0, 0.8); /* подчеркивание термина */
+}
+
+img {
+  position: relative;
+  height: auto;
+  width: 90%;
+  margin: auto;
+  padding: 45px 0;
+  display: grid;
+}
+
+/* term */
+dfn {
+  border-bottom: dashed 1px rgba(0, 0, 0, 0.8); /* подчеркивание термина */
+  padding: 0 0.4em;
+  cursor: help;
+  font-style: normal;
+  position: relative;
+}
+dfn::after /* сама подсказка*/ {
+  content: attr(data-info);
+  display: inline;
+  position: absolute;
+  top: 22px;
+  left: 0;
+  opacity: 0;
+  width: 230px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5em;
+  padding: 0.5em 0.8em;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  pointer-events: none; /* This prevents the box from apearing when hovered. */
+  transition: opacity 250ms, top 250ms;
+}
+dfn::before /* сама подсказка*/ {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border: solid transparent 5px;
+  border-bottom-color: rgba(0, 0, 0, 0.8);
+  transition: opacity 250ms, top 250ms;
+}
+dfn:hover {
+  z-index: 2;
+} /* Keeps the info boxes on top of other elements */
+dfn:hover::after,
+dfn:hover::before {
+  opacity: 1;
+}
+dfn:hover::after {
+  top: 30px;
+}
+dfn:hover::before {
+  top: 20px;
+}
+
+/* media */
+@media (min-width: 365px) {
+  .container {
+    max-width: 320px;
+    margin: auto;
+    padding: 0;
+  }
+}
+
+@media (min-width: 540px) {
+  .container {
+    max-width: 480px;
+  }
+}
+
+@media (min-width: 740px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 991px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .container {
+    max-width: 960px;
+  }
+}
